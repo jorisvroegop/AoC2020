@@ -2,8 +2,7 @@ import pandas as pd
 
 df_pw = pd.read_table(r"input.txt", sep=" ", header=None)
 
-df_pw['low'] = df_pw[0].str.split('-', n=1, expand=True)[0].astype('int')
-df_pw['high'] = df_pw[0].str.split('-', n=1, expand=True)[1].astype('int')
+df_pw[['low', 'high']] = df_pw[0].str.split('-', n=1, expand=True).astype('int')
 df_pw['letter'] = df_pw[1].str.rstrip(':')
 df_pw['pw'] = df_pw[2]
 
