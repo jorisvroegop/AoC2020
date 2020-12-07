@@ -11,7 +11,6 @@ for line in f.readlines() + ['\n']:
     answer.append(line)
 
 def calc_group_set(group:list, part:int):
-    answer_set = set()
     for x, i in enumerate(group):
         if x == 0:
             answer_set = set(i)
